@@ -9,42 +9,43 @@ import { useTranslation } from "react-i18next";
  */
 
 const ProjectCard = ({ project, className, onClick }) => {
-  if (!project || !project.tags) {
-    return null; 
-  }
+  // if (!project || !project.tags) {
+  //   return null; 
+  // }
 
   return (
-    <div
-      className={`${className} shadow-lg w-70 min-w-[240px] bg-white rounded-[6px] hover:shadow-sm hover:scale-105 hover-drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.1))`}
-      onClick={onClick}
-      style={{ filter: 'drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.1))',
-      }}
-    >
-      <img
-        src={project.image}
-        className="w-full object-contain h-auto rounded-[6px]"
-        alt={project.name}
-      />
-      <div className="px-[5%] pb-3 mb-1 ml-[6px] ">
-        <div className="flex flex-row flex-wrap mt-5 lg:mt-0  place-items-center -translate-y-1/2 ">
-          {project.tags.map((tag, index) => ( // Map directly over the tags array in the project object
-            <div key={index} className="flex bg-blue-500 text-white mr-[2%] px-[3%] h-[20px] 2xl:my-[0px] md:px-[6%] md:h-[25px] rounded-md shadow-md !md:text-sm whitespace-normal">
-              <ParagraphText className="text-white whitespace-nowrap self-center">
-                {tag}
-              </ParagraphText>
-            </div>
-          ))}
-        </div>
-        <div className="flex flex-nowrap">
-          <ParagraphTitle className={`text-[1.25rem] !text-black shrink`}>
-            {project.name}{" "}
-          </ParagraphTitle>
-          <ParagraphTitle className="!text-black ml-1">→</ParagraphTitle>
-        </div>
-
-        <ParagraphText className="md:text-sm ">
-          {project.description}
-        </ParagraphText>
+    <div class="w-80 max-w-[865px] min-w-72 md:min-w-[624px] px-6 pt-6 pb-9 md:px-9 md:pt-9 md:pb-12 bg-white rounded-[5px] inline-flex flex-col justify-start items-start gap-2.5 overflow-hidden border-2 border-black">
+      <div class="self-stretch flex flex-col justify-start items-start gap-4 md:gap-5">
+          {/*  Hero Image  */}
+          <div class="self-stretch h-40 md:h-80 relative bg-amber-500 rounded-[5px] overflow-hidden">
+              <div class="w-[543.57px] h-96 left-[-123px] md:left-[125px] top-[37px] absolute"></div>
+          </div>
+          
+          {/*  Title and Icons */}
+          <div class="self-stretch inline-flex justify-start items-start gap-3 md:gap-16">
+              <div class="flex-1 max-w-96 md:max-w-none justify-start text-zinc-800 text-lg md:text-2xl font-normal font-['Poppins'] leading-6 md:leading-8">reducing volunteer management time by 4 hours per month with a digital volunteer hour logbook</div>
+              <div class="hidden md:block w-20 h-20 bg-zinc-800 rounded-full"></div>
+              <img class="hidden md:block w-20 h-20" src="https://placehold.co/80x78" />
+          </div>
+          
+          {/*  Divider */}
+          <div class="self-stretch h-0 outline outline-1 outline-offset-[-0.50px] outline-zinc-300"></div>
+          
+          {/* Info Section */}
+          <div class="w-full max-w-[552px] flex flex-col md:inline-flex md:flex-row justify-start items-start gap-3 md:gap-6">
+              <div class="w-28 md:w-36 flex flex-col justify-start items-start gap-1.5 md:gap-3">
+                  <div class="w-36 justify-start text-neutral-500 text-[10px] md:text-sm font-medium font-['Poppins'] uppercase">CLIENT</div>
+                  <div class="justify-start md:self-stretch text-zinc-800 text-sm md:text-base font-normal font-['Poppins']">Our Community Bikes</div>
+              </div>
+              <div class="w-28 md:w-36 flex flex-col justify-start items-start gap-1.5 md:gap-3">
+                  <div class="self-stretch justify-start text-neutral-500 text-[10px] md:text-sm font-medium font-['Poppins'] uppercase">SERVICE</div>
+                  <div class="self-stretch justify-start text-zinc-800 text-sm md:text-base font-normal font-['Poppins']">Web-app</div>
+              </div>
+              <div class="w-28 md:w-36 flex flex-col justify-start items-start gap-1.5 md:gap-3">
+                  <div class="self-stretch justify-start text-neutral-500 text-[10px] md:text-sm font-medium font-['Poppins'] uppercase">SECTOR</div>
+                  <div class="justify-start md:self-stretch text-zinc-800 text-sm md:text-base font-normal font-['Poppins']">Sustainable Transportation</div>
+              </div>
+          </div>
       </div>
     </div>
   );
